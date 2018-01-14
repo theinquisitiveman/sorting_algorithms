@@ -1,0 +1,10 @@
+def bubblesort(N):
+    for i in range(len(N)):
+        for k in range(len(N) - 1, i, -1):
+            if (N[k] < N[k - 1]):
+                swap(N, k, k - 1)
+
+def swap(N, x, y):
+  tmp = N[x]
+  N[x] = N[y]
+  N[y] = tmp
