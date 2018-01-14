@@ -1,0 +1,23 @@
+#mark first element as sorted
+#for each unsorted element X
+#  'extract' the element X
+#  for j = lastSortedIndex down to 0
+#    if current element j > X
+#      move sorted element to the right by 1
+#    break loop and insert X here
+
+def insertionsort(N):
+## In this case, N will be an array of values
+    for i in range(1, len(N)):
+## Amongst the range of values, we'll make the
+## first number the base, or key which anchors
+## the values we check against in the sort.
+        base = N[i]
+        j = i-1
+## j is then the next incremental value from our base.
+        while j >=0 and base < N[j]:
+# Now we are moving on to the next value.
+                N[j+1] = N[j]
+                j -= 1
+# We have established a new base for reference.
+        N[j+1] = base
